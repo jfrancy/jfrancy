@@ -16,8 +16,40 @@
     if (element) element.textContent = value;
   }
 
+  function cleanPhone(value) {
+    return String(value || "").replace(/[^\d+]/g, "");
+  }
+
+  function whatsappNumber(value) {
+    return cleanPhone(value).replace(/^\+/, "");
+  }
+
+  function setLink(id, text, href) {
+    const element = document.getElementById(id);
+    if (!element) return;
+    element.textContent = text;
+    element.href = href;
+  }
+
+  function setMeta(selector, value, attr = "content") {
+    const element = document.querySelector(selector);
+    if (element && value) element.setAttribute(attr, value);
+  }
+
+  function renderSeo() {
+    const seo = content.company.seo || {};
+    if (seo.title) document.title = seo.title;
+    setMeta('meta[name="description"]', seo.description);
+    setMeta('meta[property="og:title"]', seo.title);
+    setMeta('meta[property="og:description"]', seo.description);
+    setMeta('meta[property="og:url"]', seo.url);
+    setMeta('meta[property="og:image"]', seo.image);
+    setMeta('link[rel="canonical"]', seo.url, "href");
+  }
+
   function renderCompany() {
     document.title = `${content.company.name} | Chemical Supplier in Tanzania`;
+    renderSeo();
     setText("aboutText", content.company.about);
     setText("statProducts", content.company.stats.products);
     setText("statRegions", content.company.stats.regions);
@@ -25,16 +57,20 @@
     setText("locationText", content.company.location);
     setText("year", new Date().getFullYear());
 
-    const phoneLink = document.getElementById("phoneLink");
-    const emailLink = document.getElementById("emailLink");
-    if (phoneLink) {
-      phoneLink.textContent = content.company.phone;
-      phoneLink.href = `tel:${content.company.phone.replace(/\s+/g, "")}`;
-    }
-    if (emailLink) {
-      emailLink.textContent = content.company.email;
-      emailLink.href = `mailto:${content.company.email}`;
-    }
+    const phoneHref = `tel:${cleanPhone(content.company.phone)}`;
+    const emailHref = `mailto:${content.company.email}`;
+    const mapHref = content.company.mapUrl || `https://maps.google.com/?q=${encodeURIComponent(content.company.location)}`;
+    const waHref = `https://wa.me/${whatsappNumber(content.company.whatsapp || content.company.phone)}?text=${encodeURIComponent(
+      `Hello ${content.company.name}, I would like to request chemical supply information.`
+    )}`;
+
+    setLink("phoneLink", content.company.phone, phoneHref);
+    setLink("emailLink", content.company.email, emailHref);
+    setLink("topPhoneLink", content.company.phone, phoneHref);
+    setLink("topEmailLink", content.company.email, emailHref);
+    setLink("topLocationLink", content.company.location, mapHref);
+    setLink("whatsappLink", "WA", waHref);
+    setLink("callLink", "Call", phoneHref);
   }
 
   function productCard(product) {

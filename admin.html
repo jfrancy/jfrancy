@@ -2,88 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CMS Admin | Lake Zone Chemicals Limited</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <meta http-equiv="refresh" content="0; url=admin/" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Redirecting to CMS</title>
+    <script>window.location.replace("admin/");</script>
   </head>
-  <body class="admin-body">
-    <header class="admin-header">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">LZ</span>
-        <span>
-          <strong>Lake Zone CMS</strong>
-          <small>Content manager</small>
-        </span>
-      </a>
-      <div class="admin-actions">
-        <button class="button secondary" id="exportBtn" type="button">Export JSON</button>
-        <label class="button secondary file-button">
-          Import JSON
-          <input id="importInput" type="file" accept="application/json" />
-        </label>
-        <button class="button primary" id="saveBtn" type="button">Save Changes</button>
-      </div>
-    </header>
-
-    <main class="admin-shell">
-      <aside class="admin-sidebar">
-        <button class="tab is-active" data-tab="company" type="button">Company</button>
-        <button class="tab" data-tab="products" type="button">Products</button>
-        <button class="tab" data-tab="industries" type="button">Industries</button>
-        <button class="tab" data-tab="insights" type="button">Insights</button>
-      </aside>
-
-      <section class="admin-panel" id="companyPanel">
-        <div class="panel-heading">
-          <p class="eyebrow">Company profile</p>
-          <h1>Site settings</h1>
-        </div>
-        <div class="form-grid">
-          <label>Company name<input id="companyName" /></label>
-          <label>Phone<input id="companyPhone" /></label>
-          <label>Email<input id="companyEmail" /></label>
-          <label>Location<input id="companyLocation" /></label>
-          <label class="wide">About text<textarea id="companyAbout" rows="6"></textarea></label>
-        </div>
-      </section>
-
-      <section class="admin-panel is-hidden" id="productsPanel">
-        <div class="panel-heading with-action">
-          <div>
-            <p class="eyebrow">Catalogue</p>
-            <h1>Products</h1>
-          </div>
-          <button class="button secondary" data-add="products" type="button">Add Product</button>
-        </div>
-        <div class="admin-list" id="productsEditor"></div>
-      </section>
-
-      <section class="admin-panel is-hidden" id="industriesPanel">
-        <div class="panel-heading with-action">
-          <div>
-            <p class="eyebrow">Sectors</p>
-            <h1>Industries</h1>
-          </div>
-          <button class="button secondary" data-add="industries" type="button">Add Industry</button>
-        </div>
-        <div class="admin-list" id="industriesEditor"></div>
-      </section>
-
-      <section class="admin-panel is-hidden" id="insightsPanel">
-        <div class="panel-heading with-action">
-          <div>
-            <p class="eyebrow">Updates</p>
-            <h1>Insights</h1>
-          </div>
-          <button class="button secondary" data-add="insights" type="button">Add Insight</button>
-        </div>
-        <div class="admin-list" id="insightsEditor"></div>
-      </section>
-    </main>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <script src="assets/data.js"></script>
-    <script src="assets/admin.js"></script>
+  <body>
+    <p>Redirecting to <a href="admin/">CMS admin</a>.</p>
   </body>
 </html>

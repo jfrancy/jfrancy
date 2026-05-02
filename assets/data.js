@@ -2,14 +2,25 @@ window.LZC_DEFAULT_CONTENT = {
   company: {
     name: "LAKE ZONE CHEMICALS LIMITED",
     phone: "+255 700 000 000",
+    whatsapp: "+255 700 000 000",
     email: "sales@lakezonechemicals.co.tz",
     location: "Mwanza, Tanzania",
+    mapUrl: "https://maps.google.com/?q=Mwanza%2C%20Tanzania",
     about:
       "Lake Zone Chemicals Limited is a Tanzania-based chemical supplier focused on safe, compliant, and responsive procurement for businesses that cannot afford delays or inconsistent quality. We help customers choose the right grades, package sizes, and logistics route for their operation.",
     stats: {
       products: "120+",
       regions: "8",
       support: "24h"
+    },
+    seo: {
+      title: "Lake Zone Chemicals Limited | Chemical Supplier in Mwanza, Tanzania",
+      description:
+        "Lake Zone Chemicals Limited supplies industrial chemicals, water treatment chemicals, laboratory reagents, agricultural chemicals, and mining chemicals across Mwanza and Tanzania.",
+      url: "https://www.lakezonechemicals.co.tz/",
+      image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1200&q=82",
+      keywords:
+        "chemical supplier Tanzania, chemicals Mwanza, water treatment chemicals Tanzania, industrial chemicals Tanzania, laboratory reagents Tanzania"
     }
   },
   products: [

@@ -37,17 +37,33 @@
   function renderCompanyForm() {
     document.getElementById("companyName").value = content.company.name;
     document.getElementById("companyPhone").value = content.company.phone;
+    document.getElementById("companyWhatsapp").value = content.company.whatsapp || content.company.phone;
     document.getElementById("companyEmail").value = content.company.email;
     document.getElementById("companyLocation").value = content.company.location;
+    document.getElementById("companyMapUrl").value = content.company.mapUrl || "";
     document.getElementById("companyAbout").value = content.company.about;
+    document.getElementById("seoTitle").value = content.company.seo?.title || "";
+    document.getElementById("seoDescription").value = content.company.seo?.description || "";
+    document.getElementById("seoUrl").value = content.company.seo?.url || "";
+    document.getElementById("seoImage").value = content.company.seo?.image || "";
+    document.getElementById("seoKeywords").value = content.company.seo?.keywords || "";
   }
 
   function readCompanyForm() {
     content.company.name = document.getElementById("companyName").value.trim();
     content.company.phone = document.getElementById("companyPhone").value.trim();
+    content.company.whatsapp = document.getElementById("companyWhatsapp").value.trim();
     content.company.email = document.getElementById("companyEmail").value.trim();
     content.company.location = document.getElementById("companyLocation").value.trim();
+    content.company.mapUrl = document.getElementById("companyMapUrl").value.trim();
     content.company.about = document.getElementById("companyAbout").value.trim();
+    content.company.seo = {
+      title: document.getElementById("seoTitle").value.trim(),
+      description: document.getElementById("seoDescription").value.trim(),
+      url: document.getElementById("seoUrl").value.trim(),
+      image: document.getElementById("seoImage").value.trim(),
+      keywords: document.getElementById("seoKeywords").value.trim()
+    };
   }
 
   function renderEditableList(key, targetId, fields) {

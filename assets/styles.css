@@ -42,20 +42,52 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   padding: 16px clamp(20px, 4vw, 56px);
   background: rgba(251, 253, 251, 0.86);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid transparent;
 }
 
+.admin-header,
+.header-main,
+.header-right,
+.top-contacts,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.admin-header,
+.header-main {
+  justify-content: space-between;
+  gap: 24px;
+}
+
 .site-header[data-elevated="true"],
 .admin-header {
   border-bottom-color: var(--line);
   box-shadow: 0 10px 40px rgba(20, 33, 29, 0.08);
+}
+
+.header-right {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.top-contacts {
+  gap: 14px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.top-contacts a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
 }
 
 .brand {
@@ -89,7 +121,6 @@ textarea {
 }
 
 .site-nav {
-  display: flex;
   gap: clamp(14px, 2vw, 30px);
   color: var(--muted);
   font-weight: 700;
@@ -515,6 +546,35 @@ textarea {
   font-weight: 800;
 }
 
+.floating-actions {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 30;
+  display: grid;
+  gap: 10px;
+}
+
+.float-button {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 950;
+  box-shadow: 0 18px 45px rgba(20, 33, 29, 0.25);
+}
+
+.float-button.whatsapp {
+  background: #25d366;
+}
+
+.float-button.call {
+  background: var(--green);
+}
+
 .admin-body {
   background: #eef5f1;
 }
@@ -658,12 +718,19 @@ textarea {
 }
 
 @media (max-width: 980px) {
-  .site-header {
+  .header-main,
+  .header-right {
     align-items: flex-start;
   }
 
+  .header-main {
+    flex-direction: column;
+  }
+
+  .top-contacts,
   .site-nav {
-    display: none;
+    flex-wrap: wrap;
+    gap: 10px 16px;
   }
 
   .hero,
@@ -722,6 +789,15 @@ textarea {
   .with-action {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .top-contacts {
+    display: grid;
+    align-items: start;
   }
 
   .admin-actions {
