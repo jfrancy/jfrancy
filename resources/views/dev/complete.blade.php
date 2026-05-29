@@ -6,6 +6,7 @@
   <p>Your purchase code has been generated. Share it with the client installer.</p>
   <div class="hero-panel">
     <div><strong>Purchase Code</strong><span style="font-family:monospace">{{ $purchase->code }}</span></div>
+    <div><strong>License Format</strong><span>{{ $purchase->license_format }}</span></div>
     <div><strong>Max Activations</strong><span>{{ $purchase->max_activations }}</span></div>
   </div>
   <p>Activation endpoint for Vfd-POS integrations: <code>{{ url('/api/license/verify') }}</code></p>

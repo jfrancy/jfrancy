@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PurchaseCode extends Model
 {
     protected $fillable = [
-        'license_order_id', 'software_product_id', 'code', 'activation_secret', 'max_activations',
+        'license_order_id', 'software_product_id', 'code', 'license_format', 'activation_secret', 'max_activations',
         'activations_count', 'expires_at', 'last_verified_at', 'is_active',
     ];
 

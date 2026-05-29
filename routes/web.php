@@ -14,6 +14,7 @@ Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 Route::get('/dev-portal', [DevPortalController::class, 'index'])->name('dev.portal');
 Route::post('/dev-portal/checkout', [DevPortalController::class, 'checkout'])->name('dev.checkout');
 Route::get('/dev-portal/complete/{code}', [DevPortalController::class, 'complete'])->name('dev.order.complete');
+Route::post('/api/licenses', [DevPortalController::class, 'store'])->name('dev.licenses.store');
 Route::post('/api/license/verify', [DevPortalController::class, 'verify'])->name('dev.license.verify');
 
 Route::get('/sitemap.xml', [SiteController::class, 'sitemap'])->name('sitemap');

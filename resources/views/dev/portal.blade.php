@@ -17,6 +17,13 @@
           <label>Email <input required type="email" name="customer_email" /></label>
           <label>Phone <input name="customer_phone" /></label>
           <label>Install Domain/IP <input name="domain" placeholder="vfdpos-client.local" /></label>
+          <label>License key format
+            <select name="license_format" required>
+              @foreach($licenseFormats as $format)
+                <option value="{{ $format['value'] }}">{{ $format['label'] }} — {{ $format['description'] }}</option>
+              @endforeach
+            </select>
+          </label>
           <fieldset>
             <legend>Modules</legend>
             @foreach($product->modules as $module)
