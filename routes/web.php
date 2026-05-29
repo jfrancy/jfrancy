@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\DevPortalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'home'])->name('home');
@@ -9,6 +10,12 @@ Route::get('/products', [SiteController::class, 'products'])->name('products');
 Route::get('/industries', [SiteController::class, 'industries'])->name('industries');
 Route::get('/insights', [SiteController::class, 'insights'])->name('insights');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+
+Route::get('/dev-portal', [DevPortalController::class, 'index'])->name('dev.portal');
+Route::post('/dev-portal/checkout', [DevPortalController::class, 'checkout'])->name('dev.checkout');
+Route::get('/dev-portal/complete/{code}', [DevPortalController::class, 'complete'])->name('dev.order.complete');
+Route::post('/api/license/verify', [DevPortalController::class, 'verify'])->name('dev.license.verify');
+
 Route::get('/sitemap.xml', [SiteController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [SiteController::class, 'robots'])->name('robots');
 
