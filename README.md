@@ -1,63 +1,37 @@
-# Lake Zone Chemicals Limited Laravel CMS
+# Hi there, I'm Julius F. Justine 👋
 
-Laravel CMS and high-converting marketing website for **LAKE ZONE CHEMICALS LIMITED**, a chemical supplier company in Tanzania.
+### Full-Stack DevOps & Platform Engineer | Core Architect & Founder @telenicalsystems
 
-## Features
+I engineer high-throughput microservices, real-time event-driven architectures, and automated deployment pipelines. By balancing low-level backend performance in **Go** with scalable infrastructure management via **Docker & Kubernetes**, I bridge the gap between application code and stable production operations.
 
-- Laravel 13 application structure
-- Database-backed CMS for company details, SEO, products, industries, and insights
-- Hidden admin route: `/lake-zone-control`
-- Powerful SEO: server-rendered meta tags, canonical URL, Open Graph, Twitter card, structured LocalBusiness schema, dynamic `robots.txt`, and dynamic `sitemap.xml`
-- Clean extensionless URLs
-- Sleek responsive marketing design
-- Floating WhatsApp and call buttons
-- Editable phone, WhatsApp, email, location, map link, and homepage content
-- SQLite by default for easy setup, with MySQL config ready in `config/database.php`
+---
 
-## Local Setup
+### 🛠️ Technical Ecosystem
 
-```bash
-composer install
-cp .env.example .env
-php artisan key:generate
-php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
-php artisan migrate --seed
-php artisan serve
-```
+*   **Backend Microservices** ── `Go (Golang)` • `Node.js` • `NestJS` • `Socket.io`
+*   **DevOps & Infrastructure** ── `Docker Containers` • `Kubernetes (K8s)` • `CI/CD Pipelines` • `Linux VPS Deployment`
+*   **Frontend Architectures** ── `Next.js` • `React` • `TailwindCSS` • `Server-Side Rendering (SSR)`
+*   **Databases & Caching** ── `PostgreSQL` • `Redis` • `MongoDB`
 
-Open the site:
+---
 
-```text
-http://127.0.0.1:8000
-```
+### 🚀 Production Footprint & Capabilities
 
-Open the CMS:
+*   **Real-Time Data Ingestion:** Engineered high-concurrency tracking engines using **Go** and **Socket.io** for Fleet Management Systems (FMS), GPS tracking, and terminal automation.
+*   **Container Orchestration:** Designed optimized **multi-stage Docker builds** and **Kubernetes manifests** to significantly minimize container footprints and streamline microservice lifecycles.
+*   **Enterprise Architecture:** Founder and lead system architect at **Telenical Systems Limited**, scaling localized SaaS and IoT solutions from local development to production VPS platforms.
 
-```text
-http://127.0.0.1:8000/lake-zone-control
-```
+---
 
-Default admin password is set in `.env`:
+### 📊 GitHub Activity
+*(Note: My primary enterprise contributions are engineered across private corporate repositories. Turn on "Show private contributions" in your settings to view full activity).*
 
-```text
-ADMIN_PASSWORD=change-this-strong-password
-```
+---
 
-Change it before using the site publicly.
+### 🌐 International Collaboration Logistics
 
-## GitHub Usage
+*   **Timezone Compatibility:** Based in Tanzania (`GMT+3 / EAT`). Highly compatible with European (`CET/EET`) and overlap-friendly with US Eastern (`EST`) working hours.
+*   **Frictionless Global Payments:** Fully integrated with cross-border banking networks (**Grey**, **Raenest**). Legally equipped to receive international remote salaries via USD/EUR/GBP ACH and SEPA local routing.
+*   **Work Inquiries:** Open to high-impact remote Software Engineering, DevOps, or Contract Consultant roles.
 
-Clone on another PC:
-
-```bash
-git clone https://github.com/jfrancy/jfrancy.git
-cd jfrancy
-composer install
-cp .env.example .env
-php artisan key:generate
-php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
-php artisan migrate --seed
-php artisan serve
-```
-
-For production hosting, point the web server document root to the `public` directory.
+📬 **Connect With Me:** [://telenicalsystems.com](https://://telenicalsystems.com) | **Email:** julius@telenicalsystems.com
