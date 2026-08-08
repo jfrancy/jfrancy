@@ -6,6 +6,8 @@ use App\Models\Industry;
 use App\Models\Insight;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\SoftwareModule;
+use App\Models\SoftwareProduct;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -68,6 +70,37 @@ class DatabaseSeeder extends Seeder
 
         foreach ($insights as $index => [$title, $label, $body]) {
             Insight::query()->updateOrCreate(['title' => $title], compact('label', 'body') + ['sort_order' => $index + 1, 'is_active' => true]);
+        }
+
+
+        $software = SoftwareProduct::query()->updateOrCreate(
+            ['sku' => 'VFDPOS-CORE'],
+            [
+                'name' => 'Vfd-POS Core License',
+                'slug' => 'vfd-pos-core-license',
+                'description' => 'Main Vfd-POS license for production deployment and support updates.',
+                'price' => 199.00,
+                'is_active' => true,
+            ]
+        );
+
+        $modules = [
+            ['Inventory Pro Module', 'INV-PRO', 'Advanced stock movement and valuation tools.', 49.00],
+            ['Fiscal Sync Module', 'FISCAL-SYNC', 'e-Tax and fiscal printer integration toolkit.', 79.00],
+            ['Analytics Module', 'ANALYTICS', 'Business analytics dashboards and trends.', 39.00],
+        ];
+
+        foreach ($modules as [$name, $code, $description, $price]) {
+            SoftwareModule::query()->updateOrCreate(
+                ['code' => $code],
+                [
+                    'software_product_id' => $software->id,
+                    'name' => $name,
+                    'description' => $description,
+                    'price' => $price,
+                    'is_active' => true,
+                ]
+            );
         }
     }
 }
